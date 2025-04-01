@@ -1,0 +1,235 @@
+/* Large Screens */
+@media (min-width: 1200px) {
+    .dashboard-container {
+        padding: 2rem;
+    }
+}
+
+/* Medium Screens */
+@media (max-width: 1199px) {
+    .kpi-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .charts-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+    .navbar .container-fluid {
+        padding: 0.5rem;
+    }
+    
+    .navbar-title {
+        display: none;
+    }
+    
+    .search-container {
+        max-width: 150px;
+    }
+    
+    .quick-access-section {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .kpi-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .kpi-card {
+        padding: 1rem;
+    }
+    
+    .chart-card {
+        margin-bottom: 1rem;
+    }
+
+    .charts-wrapper {
+        width: 100%;
+        overflow-x: hidden;
+        margin-bottom: 20px;
+    }
+    
+    .charts-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .chart-card {
+        width: 100%;
+        min-height: 300px;
+        margin-bottom: 0;
+    }
+    
+    .chart-content {
+        position: relative;
+        height: 250px;
+    }
+    
+    canvas {
+        max-height: 250px;
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 576px) {
+    .quick-access-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .search-container {
+        display: none;
+    }
+    
+    .notification-panel {
+        width: 100%;
+        right: 0;
+    }
+    
+    .product-table th:nth-child(2),
+    .product-table td:nth-child(2) {
+        display: none;
+    }
+}
+
+/* Sidebar Responsive */
+@media (max-width: 992px) {
+    #sidebar {
+        position: fixed;
+        right: -280px;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+    
+    #sidebar.active {
+        right: 0;
+    }
+    
+    .overlay.active {
+        display: block;
+    }
+}
+
+/* Header Actions Responsive */
+@media (max-width: 420px) {
+    .header-actions {
+        gap: 0.5rem;
+    }
+    
+    .profile-img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .notification-badge {
+        font-size: 0.7rem;
+    }
+}
+
+/* Header Responsive Styles */
+@media (max-width: 992px) {
+    .navbar .container-fluid {
+        position: relative;
+    }
+    
+    .search-container {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        display: none;
+        z-index: 1000;
+    }
+
+    .search-container.active {
+        display: block;
+    }
+
+    .mobile-search {
+        display: none;
+        padding: 10px 15px;
+        background: #fff;
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .mobile-search.active {
+        display: block;
+    }
+
+    #searchToggle {
+        display: inline-flex !important;
+    }
+
+    .navbar-brand {
+        max-width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .navbar-brand {
+        max-width: 120px;
+    }
+
+    .navbar-logo {
+        font-size: 1.2rem;
+        margin-right: 8px;
+    }
+
+    .navbar-title {
+        font-size: 1rem;
+    }
+
+    .header-actions {
+        gap: 8px;
+    }
+
+    .notification-btn, .profile-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .notification-badge {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+
+    .profile-img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-title {
+        display: none;
+    }
+
+    .navbar-logo {
+        margin-right: 0;
+    }
+
+    .header-actions {
+        gap: 5px;
+    }
+}

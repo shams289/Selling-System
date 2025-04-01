@@ -1,0 +1,366 @@
+/**
+ * Global CSS Variables and Styles
+ * For ASHKAN Warehouse Management System
+ */
+
+:root {
+    /* Color scheme */
+    --primary-color: #4361ee;
+    --primary-light: rgba(67, 97, 238, 0.1);
+    --primary-hover: #3050e0;
+    --secondary-color: #4f5d75;
+    --success-color: #2ecc71;
+    --danger-color: #e53e3e;
+    --warning-color: #f39c12;
+    --info-color: #3498db;
+    --dark-color: #2d3748;
+    --text-color: #333333;
+    --text-muted: #718096;
+    
+    /* Grays */
+    --light-gray: #f8f9fa;
+    --gray-100: #f7fafc;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e0;
+    --gray-400: #a0aec0;
+    --gray-500: #718096;
+    --gray-600: #4a5568;
+    
+    /* UI elements */
+    --border-color: #e2e8f0;
+    --border-radius: 10px;
+    --border-radius-sm: 6px;
+    --border-radius-lg: 15px;
+    --border-radius-pill: 50px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 5px 15px rgba(67, 97, 238, 0.2);
+    
+    /* Spacing (in px) */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-base: 20px;
+    --spacing-lg: 30px;
+    --spacing-xl: 40px;
+    
+    /* Layout */
+    --sidebar-width: 250px;
+    --header-height: 60px;
+    --content-max-width: 1200px;
+    
+    /* Animation */
+    --transition-fast: 0.2s;
+    --transition-base: 0.3s;
+    --transition-slow: 0.5s;
+}
+@font-face {
+    font-family: 'Zain';
+    src: url('../fonts/zain.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    font-family: 'Zain', sans-serif;
+
+}
+
+/* Base styles */
+body {
+    font-family: 'Zain', sans-serif;
+    background-color: #f5f7fa;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+/* Common layout components */
+
+/* Header */
+.header {
+    background-color: white;
+    padding: var(--spacing-md) var(--spacing-base);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.header-logo i {
+    font-size: 1.5rem;
+    margin-left: var(--spacing-sm);
+}
+
+.user-profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-gray);
+    overflow: hidden;
+}
+
+.user-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.notifications-icon {
+    position: relative;
+    margin-left: var(--spacing-base);
+}
+
+.notifications-icon .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--danger-color);
+    font-size: 0.6rem;
+}
+
+/* Sidebar */
+/* .sidebar {
+    background-color: white;
+    width: var(--sidebar-width);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding: var(--spacing-base) 0;
+    box-shadow: var(--shadow);
+    overflow-y: auto;
+    z-index: 900;
+    transition: all var(--transition-base);
+} */
+
+/* .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--spacing-base) var(--spacing-base);
+    margin-bottom: var(--spacing-base);
+    border-bottom: 1px solid var(--border-color);
+} */
+
+/* Main content */
+.main-content {
+    margin-right: 260px; /* Default margin when sidebar is open */
+    transition: margin-right 0.3s ease;
+    /* padding: var(--spacing-base); */
+    padding-top: 110px;
+}
+
+/* When sidebar is closed */
+body:not(.sidebar-active) .main-content {
+    margin-right: 0;
+}
+
+.page-title {
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-base);
+}
+
+/* Card components */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: var(--spacing-base);
+    background-color: white;
+}
+
+.card-header {
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-md) var(--spacing-base);
+    font-weight: 600;
+}
+
+/* Tab system */
+.tab-header {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-base);
+}
+
+.tab-item {
+    padding: var(--spacing-sm) var(--spacing-base);
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--secondary-color);
+    border-bottom: 2px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.tab-item.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* Form controls */
+.form-label {
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-control, .form-select {
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-fast);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.input-group-text {
+    background-color: var(--light-gray);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Buttons */
+.btn {
+    transition: all var(--transition-fast);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: var(--border-radius-pill);
+    padding: 8px var(--spacing-base);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: var(--border-radius-pill);
+    padding: 8px var(--spacing-base);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Badges */
+.badge {
+    padding: 0.25em 0.6em;
+    font-weight: 500;
+}
+
+/* Status colors */
+.text-primary { color: var(--primary-color) !important; }
+.text-success { color: var(--success-color) !important; }
+.text-danger { color: var(--danger-color) !important; }
+.text-warning { color: var(--warning-color) !important; }
+.text-info { color: var(--info-color) !important; }
+.text-muted { color: var(--text-muted) !important; }
+
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-success { background-color: var(--success-color) !important; }
+.bg-danger { background-color: var(--danger-color) !important; }
+.bg-warning { background-color: var(--warning-color) !important; }
+.bg-info { background-color: var(--info-color) !important; }
+.bg-light { background-color: var(--light-gray) !important; }
+
+/* Utility classes */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow { box-shadow: var(--shadow); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+
+.rounded { border-radius: var(--border-radius); }
+.rounded-sm { border-radius: var(--border-radius-sm); }
+.rounded-lg { border-radius: var(--border-radius-lg); }
+.rounded-pill { border-radius: var(--border-radius-pill); }
+
+/* Mobile responsive */
+@media (max-width: 992px) {
+    .sidebar {
+        transform: translateX(100%);
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-right: 0;
+    }
+    
+    .toggle-sidebar {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .tab-header {
+        flex-wrap: wrap;
+    }
+    
+    .tab-item {
+        flex: 1;
+        text-align: center;
+        padding: var(--spacing-sm) 10px;
+        font-size: 0.9rem;
+    }
+    
+    .card-header {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .main-content {
+        margin-right: 0;
+    }
+} 
+
+/* Responsive adjustments */
+@media (max-width: 370px) {
+    #sidebar  {
+        z-index: 10000;;
+    }
+} 
+

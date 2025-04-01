@@ -1,0 +1,3 @@
+This is a placeholder for the logo.png file. 
+In a real implementation, you would need to convert the SVG to PNG or create a PNG logo directly.
+For now, you can use the SVG logo by changing the image source in index.html from "img/logo.png" to "img/logo.svg". 
